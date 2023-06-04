@@ -1,0 +1,71 @@
+.table {
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+  
+.tableContent {
+    border-collapse: collapse;
+    border: 1px solid black;
+    direction: rtl;
+}
+  
+.tableRow {
+    text-align: center;
+}
+  
+.tableHeader {
+    border: 1px solid black;
+    padding: 5px;
+}
+  
+.tableData {
+    border: 1px solid black;
+    padding: 5px;
+}
+  
+.tableButton {
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.tableButtonGray {
+    background-color: gray;
+}
+
+.tableContainer {
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    flex-direction: column;
+  }
+  
+.tableButtonsContainer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.unavailable {
+    background-color: #e0e0e0;
+}
+
+.relevantFalse {
+    text-decoration: line-through
+}
+
+.relevantButton{
+    background-color:#4CAF50
+}

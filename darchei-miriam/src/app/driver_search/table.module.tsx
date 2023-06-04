@@ -1,64 +1,82 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import styles from './css/table.module.css';
-import { Person, Driver, TableProps } from './components/person_types';
-import { filterDrivers, sortDrivers, searchDrivers, handleResetSort } from './components/table_utils';
-import { handleRelevantClick, handleAvailableClick, handleScheduleRideClick } from './components/table_click_handlers';
-import { SearchBox } from './components/search_box';
-import { FilterButtons } from './components/table_filter_buttons';
-import { TableHeader } from './components/table_header';
-import { TableBody } from './components/table_body';
-import { TableUnderButtons } from './components/table_under_buttons';
+import styles from './table.module.css';
+import { Person, Driver, TableProps } from './person_types';
+
 
 export const Drivers_table = ({ people }: TableProps) => {
-  const driversPerPage = 5;
-  const [currentPage, setCurrentPage] = useState(1);
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(5);
   const [drivers, setDrivers] = useState<Driver[]>([]);
-  const [originalDrivers, setOriginalDrivers] = useState<Driver[]>([]);
-  const startIndex = (currentPage - 1) * driversPerPage;
-  const endIndex = startIndex + driversPerPage;
 
   useEffect(() => {
-    const updatedDrivers: Driver[] = people.map(person => ({
-      ...person,
-      isAvailable: true,
-      isRelevant: true
-    }));
-    setOriginalDrivers(updatedDrivers);
+    const updatedDrivers = people.map(person => {
+      return {
+        ...person,
+        isAvailable: true,
+        isRelevant : true
+      };
+    });
     setDrivers(updatedDrivers);
   }, [people]);
 
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
+  const handleNextClick = () => {
+    setStartIndex(endIndex);
+    setEndIndex(endIndex + 5);
   };
 
-  const handleSort = (key: keyof Driver) => {
-    const sortedDrivers = sortDrivers(drivers, key);
-    setDrivers(sortedDrivers);
+  const handlePrevClick = () => {
+    setEndIndex(startIndex);
+    setStartIndex(startIndex - 5);
   };
 
-  const handleSearch = (searchTerm: string) => {
-    const filteredDrivers = searchDrivers(people, searchTerm);
-    setDrivers(filteredDrivers);
-  };
+  function handleRelevantClick(person: Person) {
+    const index = drivers.findIndex(p => p === person);
+    const updatedDrivers = [...drivers];
+    updatedDrivers[index].isRelevant = !updatedDrivers[index].isRelevant;
+    setDrivers(updatedDrivers);
+  }
 
-  const handleFilter = (filterType: string) => {
-    const filteredDrivers = filterDrivers(drivers, filterType);
-    setDrivers(filteredDrivers);
+  const handleAvailableClick = (person: Person) => {
+    const index = drivers.findIndex(p => p === person);
+    const updatedDrivers = [...drivers];
+    updatedDrivers[index].isAvailable = !updatedDrivers[index].isAvailable;
+    setDrivers(updatedDrivers);
   };
 
   return (
     <div className={styles.tableContainer}>
-      <div className={styles.tableControls} dir="rtl">
-        <SearchBox handleSearch={handleSearch} />
-        <FilterButtons handleFilter={handleFilter} handleResetSort={() => handleResetSort(originalDrivers, setDrivers)} />
-      </div>
       <table className={styles.tableContent}>
-        <TableHeader handleSort={handleSort} />
-        <TableBody drivers={drivers} startIndex={startIndex} endIndex={endIndex} handleRelevantClick={handleRelevantClick} handleAvailableClick={handleAvailableClick} handleScheduleRideClick={handleScheduleRideClick} setDrivers={setDrivers} />
+        <thead>
+          <tr className={styles.tableRow}>
+            <th className={styles.tableHeader}>Name</th>
+            <th className={styles.tableHeader}>Address</th>
+            <th className={styles.tableHeader}>Phone</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {drivers.slice(startIndex, endIndex).map((person, index) => (
+            <tr key={index} className={`${styles.tableRow} ${!person.isAvailable ? styles.unavailable : ''}`}>
+              <td className={`${styles.tableData} ${person.isRelevant ? '' : styles.relevantFalse}`}>{person.first_name} {person.last_name}</td>
+              <td className={styles.tableData}>{person.address}</td>
+              <td className={styles.tableData}>{person.phone}</td>
+              <td className={styles.tableData}><button className={`${styles.tableButton} ${!person.isRelevant ? styles.tableButtonGray : ''}`}>קבע נסיעה </button></td>
+              <td className={styles.tableData}><button className={`${styles.tableButton} ${styles.tableButtonGray}`} onClick={() => handleAvailableClick(person)} data-person={JSON.stringify(person)}>{person.isAvailable ? 'לא זמין' : 'זמין'}</button> </td>
+              <td className={styles.tableData}>
+                <button className={`${styles.tableButton} ${!person.isRelevant ? styles.relevantButton : styles.tableButtonGray}`} 
+                    onClick={() => handleRelevantClick(person)} data-person={JSON.stringify(person)}>
+                  {person.isRelevant ? 'לא רלוונטי' : 'רלוונטי'}
+                </button>
+              </td>            </tr>
+          ))}
+        </tbody>
       </table>
-      <TableUnderButtons currentPage={currentPage} handlePageChange={handlePageChange} />
+      <div className={styles.tableButtonsContainer }>
+        <button className={styles.tableButton} onClick={handleNextClick} disabled={endIndex >= drivers.length}>עוד נהגים</button>
+        <button className={styles.tableButton} onClick={handlePrevClick} disabled={startIndex === 0}>נהגים קודמים</button>
+      </div>
     </div>
   );
 };
