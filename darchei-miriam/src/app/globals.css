@@ -100,6 +100,40 @@ a {
   text-decoration: none;
 }
 
+.h1 {
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.field {
+  display: inline-block;
+  width: 50%;
+}
+
+.address {
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+
+.address-field {
+  display: inline-block;
+  width: 100px;
+}
+
+.address-label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.date-field {
+  display: inline-block;
+  width: 150px;
+  margin-right: 10px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
