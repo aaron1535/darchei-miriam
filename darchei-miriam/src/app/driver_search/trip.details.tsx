@@ -1,5 +1,5 @@
 import React from 'react';
-import { Person } from './person_types';
+import { Person } from './components/person_types';
 
 export const Trip_details = ({ person }: { person: Person }) => {
   return (

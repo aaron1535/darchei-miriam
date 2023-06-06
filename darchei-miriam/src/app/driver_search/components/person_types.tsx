@@ -13,6 +13,7 @@ export interface Person {
 export interface Driver extends Person {
   isAvailable: boolean;
   isRelevant: boolean;
+
 }
 export interface TableProps {
     people: Person[];
