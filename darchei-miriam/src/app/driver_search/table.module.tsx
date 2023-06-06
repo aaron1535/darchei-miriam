@@ -3,13 +3,13 @@
 import { useState, useEffect } from 'react';
 import styles from './css/table.module.css';
 import { Person, Driver, TableProps } from './components/person_types';
-import { filterDrivers, sortDrivers, searchDrivers } from './components/table_utils';
-import { handleRelevantClick, handleAvailableClick, handleResetSort, handleScheduleRideClick } from './components/table_click_handlers';
+import { filterDrivers, sortDrivers, searchDrivers, handleResetSort } from './components/table_utils';
+import { handleRelevantClick, handleAvailableClick, handleScheduleRideClick } from './components/table_click_handlers';
 import { SearchBox } from './components/search_box';
 import { FilterButtons } from './components/table_filter_buttons';
 import { TableHeader } from './components/table_header';
 import { TableBody } from './components/table_body';
-import { TableUnderButtons } from './components/table_buttons';
+import { TableUnderButtons } from './components/table_under_buttons';
 
 export const Drivers_table = ({ people }: TableProps) => {
   const driversPerPage = 5;

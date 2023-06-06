@@ -8,6 +8,7 @@ export const handleRelevantClick = (person: Person, drivers: Driver[], setDriver
   setDrivers(updatedDrivers);
 };
 
+
 export const handleAvailableClick = (person: Person, drivers: Driver[], setDrivers: (drivers: Driver[]) => void) => {
   const updatedDrivers = drivers.map(driver =>
     driver.ID === person.ID ? { ...driver, isAvailable: !driver.isAvailable } : driver
@@ -20,7 +21,3 @@ export const handleScheduleRideClick = (person: Person) => {
   handleScheduleRide(person);
 };
 
-//button reset sort
-export const handleResetSort = (originalDrivers: Driver[], setDrivers: (drivers: Driver[]) => void) => {
-  setDrivers([...originalDrivers]);
-};

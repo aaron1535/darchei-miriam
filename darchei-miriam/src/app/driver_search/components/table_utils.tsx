@@ -22,3 +22,7 @@ export const searchDrivers = (people: Person[], searchTerm: string) => {
     isRelevant: true
   }));
 };
+
+export const handleResetSort = (originalDrivers: Driver[], setDrivers: (drivers: Driver[]) => void) => {
+  setDrivers([...originalDrivers]);
+};

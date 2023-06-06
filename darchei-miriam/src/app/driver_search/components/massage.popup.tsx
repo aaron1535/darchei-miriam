@@ -25,6 +25,7 @@ export function handleScheduleRide(driver: Person) {
     closeButton.addEventListener('click', () => {
     document.body.removeChild(modal);
   });
+  
   modal.innerHTML = message;
   modal.appendChild(closeButton);
 
