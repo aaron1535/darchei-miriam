@@ -1,4 +1,4 @@
-
+// 'use client'
 
 import React, { useContext, useState } from "react";
 import styles from "./IdInput.module.css";

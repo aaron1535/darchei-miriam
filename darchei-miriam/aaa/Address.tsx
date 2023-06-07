@@ -1,3 +1,4 @@
+// 'use client'
 
 import React, { useContext, useEffect, useState } from 'react';
 import styles from "./Address.module.css";
@@ -15,6 +16,7 @@ export interface UserAddressInfo {
 }
 
 const Address: React.FC<AddressProps> = ({ origen }) => {
+  const [userAddressInfo, setUserAddressInfo] = useState<UserAddressInfo>({} as UserAddressInfo);
   const { travelDetails, handleTravelDetails } = useContext(TravelDetailsContext)
 
 
@@ -28,20 +30,22 @@ const Address: React.FC<AddressProps> = ({ origen }) => {
 
   useEffect(() => {
 
-    if (travelDetails.assistedId === "123456789" && origen) {
+    if (travelDetails.assistedId === "123456789") {
       // fetchUserAddressInfo();
       handleTravelDetails({ ...travelDetails, origin: { city: "ירושלים", street: "ראובן מס", number: '137' } })
-    } else if (origen) {
+    } else {
       handleTravelDetails({ ...travelDetails, origin: { city: "", street: "", number: '' } })
     }
-    
+    // if(!details.assistedId){
+    //   setTravelDetails({ ...details, origin: { city: "", street: "", number: '' } })
+    // }
   }, [travelDetails.assistedId]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     handleTravelDetails(({
       ...travelDetails,
-      origin : {
+      origin: {
         ...travelDetails.origin,
         [name]: value,
       },

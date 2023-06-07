@@ -1,4 +1,3 @@
-
 'use client'
 
 import Address from "@/components/Address";
@@ -16,10 +15,6 @@ const add_ride: React.FC = () => {
     setTravelDetails(t_d);
   };
 
-  const myConsul = (() => {
-            console.log(travelDetails)
-        })
-
   return (
     <TravelDetailsContext.Provider value={{ travelDetails, handleTravelDetails }}>
       <div style={{ textAlign: 'center', direction: 'rtl' }}>
@@ -31,7 +26,7 @@ const add_ride: React.FC = () => {
         <DatePicker />
         <TimePicker />
         <div>
-          <button onClick={myConsul}>פרטים נוספים</button>
+          <button>פרטים נוספים</button>
           <button>חפש נהג</button>
           <button>שמור לטיפול בהמשך</button>
         </div>
