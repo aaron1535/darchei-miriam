@@ -1,14 +1,12 @@
-
-
 import React, { useContext, useState } from 'react';
-import './sharedStyles.css';
+import './DatePicker.css';
 import { TravelDetailsContext } from './context/traveldetails';
 
 
 
 
 const DatePicker: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const {travelDetails, handleTravelDetails} = useContext(TravelDetailsContext)
 
 
@@ -19,12 +17,8 @@ const DatePicker: React.FC = () => {
       handleTravelDetails({...travelDetails,
       date: selectedDate!})
     } else {
-      setSelectedDate(new Date);
+      setSelectedDate(null);
     }
-  };
-
-  const handleDateSelect = () => {
-    handleTravelDetails({ ...travelDetails, date: selectedDate });
   };
 
   return (
@@ -36,9 +30,6 @@ const DatePicker: React.FC = () => {
         onChange={handleDateChange}
         className="datePickerInput"
       />
-      <button onClick={handleDateSelect} className="datePickerButton">
-        שמירת תאריך
-      </button>
     </div>
   );
 };
