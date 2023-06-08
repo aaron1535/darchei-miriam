@@ -7,13 +7,13 @@ import IdInput from "@/components/IdInput";
 import Name from "@/components/Name";
 import TimePicker from "@/components/TimePicker";
 import { TravelDetailsContext, TravelDetails } from "@/components/context/traveldetails";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const add_ride: React.FC = () => {
   const [travelDetails, setTravelDetails] = useState({} as TravelDetails);
 
-  const handleTravelDetails = (t_d: TravelDetails) => {
-    setTravelDetails(t_d);
+  const handleTravelDetails = (travelDetails: TravelDetails) => {
+    setTravelDetails(travelDetails);
   };
 
   const myConsul = (() => {
@@ -26,8 +26,8 @@ const add_ride: React.FC = () => {
         <h1 className="h1">הוספת נסיעה חדשה</h1>
         <IdInput />
         <Name />
-        <Address origen={true} />
-        <Address origen={false} />
+        <Address pickup={true} />
+        <Address pickup={false} />
         <DatePicker />
         <TimePicker />
         <div>
