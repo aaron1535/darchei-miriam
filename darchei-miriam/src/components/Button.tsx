@@ -6,7 +6,7 @@ type ButtonProps = {
 
 export const Button: FC<ButtonProps> = ({name}) => {
   return (
-    <button >test me! {name}</button>
+    <button >{name}</button>
   )
 }
 

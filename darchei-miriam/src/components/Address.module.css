@@ -1,0 +1,22 @@
+.address {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center; 
+  margin-bottom: 20px;
+}
+
+.address label {
+  margin-right: 10px;
+}
+
+.address input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure proper sizing including padding and border */
+  width: 100%; /* Take up the full available width */
+  max-width: 120px; /* Limit the maximum width if needed */
+}
