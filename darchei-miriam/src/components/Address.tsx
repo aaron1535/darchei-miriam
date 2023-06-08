@@ -5,7 +5,7 @@ import { TravelDetails, TravelDetailsContext } from './context/traveldetails';
 
 
 interface AddressProps {
-  origen: boolean;
+  pickup: boolean;
 }
 
 export interface UserAddressInfo {
@@ -14,30 +14,27 @@ export interface UserAddressInfo {
   number: string;
 }
 
-const Address: React.FC<AddressProps> = ({ origen }) => {
+const Address: React.FC<AddressProps> = ({ pickup }) => {
   const { travelDetails, handleTravelDetails } = useContext(TravelDetailsContext)
 
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // console.log(userAddressInfo); 
-    handleTravelDetails({
-      ...travelDetails,
-    });
-  }
-
   useEffect(() => {
-
-    if (travelDetails.assistedId === "123456789" && origen) {
+  
+    if (travelDetails.assistedId === "123456789" && pickup) {
       // fetchUserAddressInfo();
       handleTravelDetails({ ...travelDetails, origin: { city: "ירושלים", street: "ראובן מס", number: '137' } })
-    } else if (origen) {
+    } else if(pickup) {
       handleTravelDetails({ ...travelDetails, origin: { city: "", street: "", number: '' } })
+      handleTravelDetails({ ...travelDetails, destination: { city: "", street: "", number: '' } })
+
+    } else {
+      handleTravelDetails({ ...travelDetails, destination: { city: "", street: "", number: '' } })
     }
     
+
   }, [travelDetails.assistedId]);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleOriginInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     handleTravelDetails(({
       ...travelDetails,
@@ -48,16 +45,28 @@ const Address: React.FC<AddressProps> = ({ origen }) => {
     }));
   };
 
+  const handleDestinationInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    handleTravelDetails(({
+      ...travelDetails,
+      destination : {
+        ...travelDetails.destination,
+        [name]: value,
+      },
+    }));
+  };
+
   return (
     <>
-    { travelDetails.origin && (<form className={styles.address} /*onChange={handleSubmit}*/>
-      <h3>{origen ? "מוצא" : "יעד"}</h3>
+    { travelDetails.origin && travelDetails.destination && (
+    <form className={styles.address} /*onChange={handleSubmit}*/>
+      <h3>{pickup ? "מוצא" : "יעד"}</h3>
      <label htmlFor="city">עיר:</label>
       <input
         type="text"
         name="city"
-        value={ origen ? travelDetails.origin.city : ''}
-        onChange={handleInputChange}
+        value={ pickup ? travelDetails.origin.city : travelDetails.destination.city }
+        onChange={pickup ? handleOriginInputChange: handleDestinationInputChange }
       />
 
       <label htmlFor="street">רחוב:</label>
@@ -65,8 +74,8 @@ const Address: React.FC<AddressProps> = ({ origen }) => {
         type="text"
         id="street"
         name="street"
-        value={ origen ? travelDetails.origin.street : ''}
-        onChange={handleInputChange}
+        value={ pickup ? travelDetails.origin.street : travelDetails.destination.street}
+        onChange={pickup ? handleOriginInputChange: handleDestinationInputChange }
       />
 
       <label htmlFor="home-number">מספר:</label>
@@ -74,8 +83,8 @@ const Address: React.FC<AddressProps> = ({ origen }) => {
         type="text"
         id="home-number"
         name="number"
-        value={ origen ? travelDetails.origin.number : ''}
-        onChange={handleInputChange}
+        value={ pickup ? travelDetails.origin.number : travelDetails.destination.number}
+        onChange={pickup ? handleOriginInputChange: handleDestinationInputChange }
       />
 
     </form>)}
