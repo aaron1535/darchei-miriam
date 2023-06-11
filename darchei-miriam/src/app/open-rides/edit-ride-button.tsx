@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import styles from './page.module.css'
 
 type IdProps = {
   id: string;
@@ -15,7 +16,7 @@ const EditRideButton: React.FC<IdProps> = ({ id }) => {
   };
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button type="button" onClick={handleClick} className={styles.editButton} >
       Edit ride
     </button>
   );
