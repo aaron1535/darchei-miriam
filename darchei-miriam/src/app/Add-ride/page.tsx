@@ -1,11 +1,14 @@
 
 'use client'
 
+import Accessibility from "@/components/AccessibilitySelection";
 import Address from "@/components/Address";
+import ContinueButton from "@/components/ContinueButton";
 import DatePicker from "@/components/DatePicker";
 import IdInput from "@/components/IdInput";
 import Name from "@/components/Name";
 import TimePicker from "@/components/TimePicker";
+import CompanionsInput from "@/components/companionsInput";
 import { TravelDetailsContext, TravelDetails } from "@/components/context/traveldetails";
 import React, { useState } from "react";
 
@@ -30,12 +33,16 @@ const add_ride: React.FC = () => {
         <Address pickup={false} />
         <DatePicker />
         <TimePicker />
-        <div>
-          <button onClick={myConsul}>פרטים נוספים</button>
-          <button>חפש נהג</button>
-          <button>שמור לטיפול בהמשך</button>
-        </div>
+        <ContinueButton />
       </div>
+
+      <div style={{ textAlign: 'center', direction: 'rtl' }}>
+            <h1 className="h1">פרטים נוספים</h1>
+            <Accessibility />
+            <CompanionsInput />
+
+
+            </div>
     </TravelDetailsContext.Provider>
   );
 };

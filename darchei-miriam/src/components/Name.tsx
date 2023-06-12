@@ -22,6 +22,7 @@ const Name: React.FC = () => {
           assistedLastName: '',
         });
       }
+      console.log(travelDetails)
     },
     [travelDetails, handleTravelDetails]
   );
@@ -64,7 +65,7 @@ const Name: React.FC = () => {
         value={travelDetails.assistedLastName}
         readOnly
       />
-      <button type="submit">Submit</button>
+      {/* <button type="submit">Submit</button> */}
     </form>
   );
 };
