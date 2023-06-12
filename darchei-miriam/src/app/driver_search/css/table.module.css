@@ -1,0 +1,129 @@
+.table {
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+  
+.tableContent {
+    border-collapse: collapse;
+    border: 1px solid black;
+    direction: rtl;
+}
+  
+.tableRow {
+    text-align: center;
+}
+  
+.tableHeader {
+    border: 1px solid black;
+    padding: 5px;
+}
+  
+.tableData {
+    border: 1px solid black;
+    padding: 5px;
+}
+  
+.tableButton {
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.tableButtonGray {
+    background-color: gray;
+}
+
+.tableContainer {
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    flex-direction: column;
+  }
+  
+.tableButtonsContainer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.unavailable {
+    background-color: #e0e0e0;
+}
+
+.relevantFalse {
+    text-decoration: line-through
+}
+
+.relevantButton{
+    background-color:#4CAF50
+}
+
+.big-button {
+    width: 200px;
+    height: 50px;
+}
+
+.tableControls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+.tableHeader {
+    position: relative;
+    cursor: pointer;
+  }
+  
+.tableHeader::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: left;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    opacity: 10;
+    transform: translateY(-2px);
+}
+  
+.tableHeader:hover::after {
+    opacity: 1;
+  }
+
+.filterButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.searchBox {
+    width: 400px;
+    height: 40px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
