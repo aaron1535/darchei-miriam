@@ -1,30 +1,29 @@
 'use client'
 
-import Accessibility from "@/components/AccessibilitySelection";
-import CompanionsInput from "@/components/companionsInput";
-import { TravelDetails, TravelDetailsContext } from "@/components/context/traveldetails";
-import { useContext } from "react";
+import { useContext } from 'react';
+import styles from './AdvancedDetails.module.css';
+import { TravelDetailsContext } from '../../../components/context/traveldetails';
+import Accessibility from '../../../components/AccessibilitySelection';
+import CompanionsInput from '../../../components/companionsInput';
 
-const advancedDetails: React.FC = () => {
-
-    const { travelDetails, handleTravelDetails } = useContext(TravelDetailsContext);
-
-    return (
-        <>
-            <TravelDetailsContext.Provider value={{ travelDetails, handleTravelDetails }}>
-
-            <div style={{ textAlign: 'center', direction: 'rtl' }}>
-            <h1 className="h1">פרטים נוספים</h1>
-            <Accessibility />
-            <CompanionsInput />
-
-
-            </div>
-            </TravelDetailsContext.Provider>
-
-        </>
-    )
-
+interface Props {
+  onClose: () => void;
 }
 
-export default advancedDetails
+function AdvancedDetails(props: Props) {
+  const { onClose } = props;
+  const { travelDetails, handleTravelDetails } = useContext(TravelDetailsContext);
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.window}>
+        <h2>Advanced Details</h2>
+        <Accessibility />
+        <CompanionsInput />
+        <button onClick={onClose}>Close</button>
+      </div>
+    </div>
+  );
+}
+
+export default AdvancedDetails;

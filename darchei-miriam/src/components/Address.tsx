@@ -1,6 +1,6 @@
 
 import React, { useContext, useEffect, useState } from 'react';
-import styles from "./Address.module.css";
+import styles from "./css/Address.module.css";
 import { TravelDetails, TravelDetailsContext } from './context/traveldetails';
 
 interface AddressProps {

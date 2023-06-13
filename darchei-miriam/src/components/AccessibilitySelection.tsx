@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import styles from './Accessibility.module.css';
+import styles from './css/Accessibility.module.css';
 import { TravelDetailsContext } from './context/traveldetails';
 
 type AccessibilityState = 'standard' | 'wheelchair' | 'chairlift';

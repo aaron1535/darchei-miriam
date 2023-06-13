@@ -1,6 +1,6 @@
 
 import React, { useEffect, useContext, useState, useCallback } from "react";
-import styles from './Name.module.css';
+import styles from './css/Name.module.css';
 import { TravelDetailsContext } from "./context/traveldetails";
 
 const Name: React.FC = () => {

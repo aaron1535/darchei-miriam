@@ -20,11 +20,14 @@
   .checkbox {
     display: flex;
     align-items: center;
-    margin: 8px;
+    font-size: 20px;
+    margin: 20px;
   }
   
   .checkbox input[type='checkbox'] {
-    margin-right: 8px;
+    margin-right: 10px;
+    margin-left: 8px;
+    transform: scale(1.5);
   }
   
   .label {

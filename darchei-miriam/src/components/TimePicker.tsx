@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import './sharedStyles.css';
+import './css/sharedStyles.css';
 import { TravelDetailsContext } from './context/traveldetails';
 
 const TimePicker: React.FC = () => {

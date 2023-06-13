@@ -1,10 +1,8 @@
 
 
 import React, { useContext, useState } from "react";
-import styles from "./IdInput.module.css";
+import styles from "./css/IdInput.module.css";
 import { TravelDetailsContext } from "./context/traveldetails";
-
-
 
 
 const IdInput: React.FC = () => {
