@@ -9,7 +9,7 @@
         "destination": "Los Angeles",
         "date": "2023-06-01",
         "time": "10:00 AM",
-        "number_of_companions": 2,
+        "companions": 2,
         "accessibility_state": "standard"
       },
       {
@@ -21,7 +21,7 @@
         "destination": "Seattle",
         "date": "2023-06-02",
         "time": "2:30 PM",
-        "number_of_companions": 1,
+        "companions": 1,
         "accessibility_state": "wheelchair"
       },
       {
@@ -33,7 +33,7 @@
         "destination": "Miami",
         "date": "2023-06-03",
         "time": "6:00 PM",
-        "number_of_companions": 3,
+        "companions": 3,
         "accessibility_state": "chairlift"
       },
       {
@@ -45,7 +45,7 @@
         "destination": "Washington D.C.",
         "date": "2023-06-04",
         "time": "8:30 AM",
-        "number_of_companions": 2,
+        "companions": 2,
         "accessibility_state": "standard"
       },
       {
@@ -57,7 +57,7 @@
         "destination": "Las Vegas",
         "date": "2023-06-05",
         "time": "1:00 PM",
-        "number_of_companions": 1,
+        "companions": 1,
         "accessibility_state": "wheelchair"
       },
       {
@@ -69,7 +69,7 @@
         "destination": "Portland",
         "date": "2023-06-06",
         "time": "9:00 AM",
-        "number_of_companions": 3,
+        "companions": 3,
         "accessibility_state": "standard"
       },
       {
@@ -81,7 +81,7 @@
         "destination": "Orlando",
         "date": "2023-06-07",
         "time": "3:30 PM",
-        "number_of_companions": 1,
+        "companions": 1,
         "accessibility_state": "wheelchair"
       },
       {
@@ -93,7 +93,7 @@
         "destination": "Phoenix",
         "date": "2023-06-08",
         "time": "11:30 AM",
-        "number_of_companions": 2,
+        "companions": 2,
         "accessibility_state": "standard"
       },
       {
@@ -105,7 +105,7 @@
         "destination": "Nashville",
         "date": "2023-06-09",
         "time": "2:00 PM",
-        "number_of_companions": 1,
+        "companions": 1,
         "accessibility_state": "wheelchair"
       },
       {
@@ -117,7 +117,7 @@
         "destination": "Houston",
         "date": "2023-06-10",
         "time": "5:30 PM",
-        "number_of_companions": 3,
+        "companions": 3,
         "accessibility_state": "chairlift"
       },
       {
@@ -129,7 +129,7 @@
         "destination": "New York",
         "date": "2023-06-11",
         "time": "9:30 AM",
-        "number_of_companions": 2,
+        "companions": 2,
         "accessibility_state": "standard"
       },
       {
@@ -141,7 +141,7 @@
         "destination": "Austin",
         "date": "2023-06-12",
         "time": "12:00 PM",
-        "number_of_companions": 1,
+        "companions": 1,
         "accessibility_state": "wheelchair"
       },
       {
@@ -153,7 +153,7 @@
         "destination": "Salt Lake City",
         "date": "2023-06-13",
         "time": "8:00 AM",
-        "number_of_companions": 3,
+        "companions": 3,
         "accessibility_state": "standard"
       },
       {
@@ -165,7 +165,7 @@
         "destination": "Vancouver",
         "date": "2023-06-14",
         "time": "2:30 PM",
-        "number_of_companions": 1,
+        "companions": 1,
         "accessibility_state": "wheelchair"
       },
       {
@@ -177,7 +177,7 @@
         "destination": "Key West",
         "date": "2023-06-15",
         "time": "4:00 PM",
-        "number_of_companions": 2,
+        "companions": 2,
         "accessibility_state": "standard"
       },
       {
@@ -189,7 +189,7 @@
         "destination": "Milwaukee",
         "date": "2023-06-16",
         "time": "10:30 AM",
-        "number_of_companions": 1,
+        "companions": 1,
         "accessibility_state": "wheelchair"
       },
       {
@@ -201,7 +201,7 @@
         "destination": "Sacramento",
         "date": "2023-06-17",
         "time": "3:30 PM",
-        "number_of_companions": 3,
+        "companions": 3,
         "accessibility_state": "standard"
       }
     ]

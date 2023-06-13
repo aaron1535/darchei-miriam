@@ -61,7 +61,6 @@
 }
 
 .title {
-    /* margin-top: 500px; */
     text-align: center;
     margin-bottom: 20px;
     font-size: 52px;
@@ -217,7 +216,7 @@
 .popupButton {
     margin-left: 10px;
     padding: 8px 16px;
-    background-color: #e53935;
+    background-color: #885453;
     color: white;
     border: none;
     border-radius: 4px;
@@ -225,9 +224,9 @@
 }
 
 .popupButton:hover {
-    background-color: #c62828;
+    background-color: hsl(0, 22%, 31%);
 }
 
 .popupButton:last-child {
-    margin-left: 0;
+    margin-left: 5;
 }

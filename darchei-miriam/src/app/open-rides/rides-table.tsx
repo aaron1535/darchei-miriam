@@ -18,11 +18,7 @@ export interface Ride {
   accessibility_state: "standard" | "wheelchair" | "chairlift";
 }
 
-export interface OpenRidesList {
-  rides: Ride[];
-}
-
-export const RidesTable: React.FC<OpenRidesList> = ({ rides }: { rides: Ride[] }) => {
+export const RidesTable: React.FC<{ rides: Ride[] }> = ({ rides }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,4 +82,3 @@ export const RidesTable: React.FC<OpenRidesList> = ({ rides }: { rides: Ride[] }
 };
 
 export default RidesTable;
-
