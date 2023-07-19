@@ -20,7 +20,13 @@ const Name: React.FC = () => {
           ...travelDetails,
           assistedFirstName: '',
           assistedLastName: '',
-        });
+        })
+        // return(
+        //   <>
+        //   <div>מספר זהות לא קיים במערכת   להוספת מסתייע חדש לחץ</div>
+        //   <button>כאן</button>
+        //   </>
+        // )
       }
       console.log(travelDetails)
     },

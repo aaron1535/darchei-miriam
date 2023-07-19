@@ -11,7 +11,7 @@ const FindDriverButton: React.FC<IdProps> = ({ id }) => {
 
   const router = useRouter();
   const handleClick = () => {
-    router.push(`/find-driver/${id}`);
+    router.push(`/driver_search/${id}`);
     // console.log(`Finding driver for ${id}`);
   };
 

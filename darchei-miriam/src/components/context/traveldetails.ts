@@ -2,7 +2,6 @@
 import { UserAddressInfo } from "../Address";
 import React from "react";
 
-
 export interface TravelDetails {
   id: string;
   assistedId: string;
@@ -15,7 +14,6 @@ export interface TravelDetails {
   time: string;
   companions: number;
   accessibility_state: "standard" | "wheelchair" | "chairlift" ;
-
 
 }
 

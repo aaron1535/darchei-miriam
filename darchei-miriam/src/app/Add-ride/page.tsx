@@ -1,4 +1,3 @@
-
 'use client'
 
 import React, { useState } from "react";
@@ -10,8 +9,8 @@ import DatePicker from "../../components/DatePicker";
 import TimePicker from "../../components/TimePicker";
 import ContinueButton from "../../components/ContinueButton";
 
-
 const add_ride: React.FC = () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [travelDetails, setTravelDetails] = useState({} as TravelDetails);
 
     const handleTravelDetails = (travelDetails: TravelDetails) => {
@@ -32,7 +31,7 @@ const add_ride: React.FC = () => {
                 <Address pickup={false} />
                 <DatePicker />
                 <TimePicker />
-                <ContinueButton />
+                <ContinueButton id={travelDetails.assistedId} />
             </div >
         </TravelDetailsContext.Provider>
     );
