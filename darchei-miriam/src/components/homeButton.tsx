@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import styles from './page.module.css'
+import styles from './css/homeButton.module.css'
 
 const HomeButton: React.FC = () => {
 

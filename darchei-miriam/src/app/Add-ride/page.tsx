@@ -31,7 +31,7 @@ const add_ride: React.FC = () => {
                 <Address pickup={false} />
                 <DatePicker />
                 <TimePicker />
-                <ContinueButton id={travelDetails.assistedId} />
+                <ContinueButton id = {travelDetails.assistedId}/>
             </div >
         </TravelDetailsContext.Provider>
     );
